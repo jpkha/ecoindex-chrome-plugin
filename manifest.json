@@ -1,0 +1,35 @@
+{
+  "name": "EcoIndex",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "description": "Récupérer facilement les analyses Ecoindex faites sur une page grace au moteur ecoindex.fr",
+  "homepage_url": "https://www.ecoindex.fr/",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "fr",
+  "action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "EcoIndex",
+    "default_popup": "src/popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    }
+  ],
+  "permissions": [
+    "tabs"
+  ]
+}
